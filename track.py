@@ -59,6 +59,5 @@ stream = MyStreamer(
 
 ids = [2850190966,56780945,14595207,62703362]
 
-keys = ['ensino superior','educação superior','ensino universitário','#educaçãosuperior',
-        '#educacaosuperior','#ensinosuperior']
+keys = ['#educaçãosuperior','#educacaosuperior','#ensinosuperior']
 stream.statuses.filter(track=keys, follow=ids)
