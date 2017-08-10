@@ -38,5 +38,5 @@ while True:
     with open(random.choice(pics), 'rb') as photo:
         twitter.update_status_with_media(status=random.choice(messages), media=photo)
     print("Tweet postado!")
-    time.sleep(17280)
+    time.sleep(10800)
 
