@@ -18,6 +18,7 @@ twitter = Twython(
     access_token,
     access_token_secret
 )
+
 messages = ["Aprender é a única coisa que a mente nunca se cansa, nunca tem medo e nunca se arrepende!",
             "Aquele que não luta pelo futuro que quer, deve aceitar o futuro que vier!",
             "Ter sucesso é falhar repetidamente, mas sem perder o entusiasmo!",
@@ -29,8 +30,6 @@ messages = ["Aprender é a única coisa que a mente nunca se cansa, nunca tem me
             "Comece onde está. Use o que você tem. Faça o que puder!",
             "O sucesso normalmente vem para quem está ocupado demais para pensar nele!",
             "Você já observou um homem habilidoso em seu trabalho? Será promovido ao serviço real; não trabalhará para gente obscura."]
-#twitter.update_status(status=message)
-#print("Tweeted: {}".format(message))
 
 pics = ['aYzlNG5L.jpg','chapeu.jpeg','chapeu2.jpg','chapeu3.jpg','ensinosuperior.jpg',
         'estudante.jpg','livro.jpg','net.jpg']
