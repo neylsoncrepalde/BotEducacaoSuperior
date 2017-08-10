@@ -30,6 +30,9 @@ class MyStreamer(TwythonStreamer):
             if username == 'botedsuperior':
                 #Não printa nem retweeta posts do próprio bot
                 print('segue...')
+            if username == 'Lionstours1':
+                #outro bot
+                print('segue...')
             else:
                 print(message)
                 saida.write(str(data) + '\n')
@@ -37,7 +40,7 @@ class MyStreamer(TwythonStreamer):
                 if 'RT @' not in message:
                     #Se não for RETWEET
                     try:
-                        post.update_status(status = message[:140])
+                        post.retweet(id = data['id_str'])
                         print('Foi tweetado!')
                     except TwythonError as e:
                         print(e)
