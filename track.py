@@ -44,6 +44,8 @@ class MyStreamer(TwythonStreamer):
                         print('Foi tweetado!')
                     except TwythonError as e:
                         print(e)
+                    except UnicodeEncodeError as e:
+                        print(e)
                     time.sleep(10)
 
                     
