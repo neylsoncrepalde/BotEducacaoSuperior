@@ -12,7 +12,7 @@ from auth import (
     access_token_secret
 )
 
-saida = open('collected_tweets.txt',mode='w')
+#saida = open('collected_tweets.txt',mode='w')
 
 post = Twython(
     consumer_key,
@@ -35,13 +35,14 @@ class MyStreamer(TwythonStreamer):
                 print('segue...')
             else:
                 print(message)
-                saida.write(str(data) + '\n')
+                #saida.write(str(data) + '\n')
                             
                 if 'RT @' not in message:
                     #Se não for RETWEET
                     try:
                         post.retweet(id = data['id_str'])
                         print('Foi tweetado!')
+                        print(time.ctime())
                     except TwythonError as e:
                         print(e)
                     except UnicodeEncodeError as e:
