@@ -32,11 +32,9 @@ messages = ["Aprender é a única coisa que a mente nunca se cansa, nunca tem me
             "Você já observou um homem habilidoso em seu trabalho? Será promovido ao serviço real; não trabalhará para gente obscura."]
 
 pics = ['chapeu.jpeg','chapeu2.jpg','chapeu3.jpg','chapeu4.jpg','ensinosuperior.jpg',
-        'estudante.jpg','estudante2.jpg','estudante3.jpg','estudante4.jpg','livro.jpg','net.jpg']
+        'estudante.jpg','estudante2.jpg','estudante3.jpg','estudante4.jpg','net.jpg']
 
-while True:
-    with open(random.choice(pics), 'rb') as photo:
-        twitter.update_status_with_media(status=random.choice(messages), media=photo)
-    print("Tweet postado!")
-    time.sleep(10800)
+with open(random.choice(pics), 'rb') as photo:
+    twitter.update_status_with_media(status=random.choice(messages), media=photo)
+print("Tweet postado!")
 
