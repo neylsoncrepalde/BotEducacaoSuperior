@@ -36,5 +36,5 @@ pics = ['chapeu.jpeg','chapeu2.jpg','chapeu3.jpg','chapeu4.jpg','ensinosuperior.
 
 with open(random.choice(pics), 'rb') as photo:
     twitter.update_status_with_media(status=random.choice(messages), media=photo)
-print("Tweet postado!")
+print("Tweet postado em {}!".format(time.ctime()))
 
