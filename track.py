@@ -12,7 +12,7 @@ from auth import (
     access_token_secret
 )
 
-#saida = open('collected_tweets.txt',mode='w')
+# saida = open('collected_tweets.txt',mode='w')
 
 post = Twython(
     consumer_key,
@@ -21,6 +21,7 @@ post = Twython(
     access_token_secret
 )
 
+
 class MyStreamer(TwythonStreamer):
     def on_success(self, data):
         if 'text' in data:
@@ -28,19 +29,19 @@ class MyStreamer(TwythonStreamer):
             tweet = data['text']
             message = "@{}: {}".format(username, tweet)
             if username == 'botedsuperior':
-                #Não printa nem retweeta posts do próprio bot
+                # Não printa nem retweeta posts do próprio bot
                 print('segue...')
             if username == 'Lionstours1':
-                #outro bot
+                # outro bot
                 print('segue...')
             else:
                 print(message)
-                #saida.write(str(data) + '\n')
-                            
+                # saida.write(str(data) + '\n')
+
                 if 'RT @' not in message:
-                    #Se não for RETWEET
+                    # Se não for RETWEET
                     try:
-                        post.retweet(id = data['id_str'])
+                        post.retweet(id=data['id_str'])
                         print('Foi tweetado!')
                         print(time.ctime())
                     except TwythonError as e:
@@ -49,8 +50,7 @@ class MyStreamer(TwythonStreamer):
                         print(e)
                     time.sleep(10)
 
-                    
-            
+
 stream = MyStreamer(
     consumer_key,
     consumer_secret,
@@ -58,9 +58,9 @@ stream = MyStreamer(
     access_token_secret
 )
 
-#ids = [344956335,44502932,42399225,22037917] melhor para pós-graduação
+# ids = [344956335,44502932,42399225,22037917] melhor para pós-graduação
 
-ids = [2850190966,56780945,14595207,62703362]
+ids = [2850190966, 56780945, 14595207, 62703362]
 
-keys = ['#educaçãosuperior','#educacaosuperior','#ensinosuperior']
+keys = ['#educaçãosuperior', '#educacaosuperior', '#ensinosuperior']
 stream.statuses.filter(track=keys, follow=ids)
